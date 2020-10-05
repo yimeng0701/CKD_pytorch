@@ -1,0 +1,62 @@
+save_checkpoint_steps: 5000
+seed: 3435
+# train_steps: 25000
+# valid_steps: 5000  
+train_steps: 500
+valid_steps: 200   
+warmup_steps: 4000
+report_every: 100
+#log_file: experiment.log
+
+decoder_type: transformer
+encoder_type: transformer
+word_vec_size: 512
+rnn_size: 512
+enc_layers: 2
+dec_layers: 2
+transformer_ff: 2048
+heads: 8
+
+accum_count: 1
+optim: adam
+adam_beta1: 0.9
+adam_beta2: 0.98
+decay_method: noam
+learning_rate: 1.0
+max_grad_norm: 0.0
+
+batch_size: 6144
+batch_type: tokens
+normalization: tokens
+dropout: 0.1
+label_smoothing: 0.1
+
+max_generator_batches: 64
+
+param_init: 0.0
+param_init_glorot: 'true'
+position_encoding: 'true'
+share_decoder_embeddings: 'true'
+share_embeddings: 'true'
+  
+# Need to define:
+
+# world_size: 4
+
+## distillation config
+# logit_distillation  /  alpha
+# enc_distillation_mode   / beta
+# dec_distillation_mode   / beta
+# attn_distillation_mode  / theta
+#teacher: /home/yimeng/workspace/trained_model/tren/tmp/teacher/transformer_500.pt
+
+
+## tensorboard config
+#tensorboard: 'true'
+#tensorboard_log_dir
+
+## path to the data and saved model
+
+data: /home/yimeng/workspace/data/tr-en/tok/test_code/processed
+save_model: /home/yimeng/workspace/trained_model/tren/tmp/cross_comb/transformer
+val_result_file: /home/yimeng/workspace/trained_model/tren/tmp/cross_comb/val_result.yml

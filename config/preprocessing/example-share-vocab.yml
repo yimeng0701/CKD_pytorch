@@ -1,0 +1,30 @@
+share_vocab: 'true'
+src_seq_length: 300
+tgt_seq_length: 300
+tgt_vocab: tren_spm.vocab
+src_vocab: tren_spm.vocab
+shard_size: 1000000
+
+# examples: tr_en dataset
+data_dir: /home/yimeng/workspace/data/tr-en/tok
+train_src: train_src.spm.tr
+train_tgt: train_tgt.spm.en
+valid_src: dev_src.spm.tr
+valid_tgt: dev_tgt.spm.en
+save_data: /home/yimeng/workspace/data/tr-en/tok/test_code/processed
+
+# # examples: en_de dataset (15k)
+# data_dir: /home/yimeng/workspace/data/en_de/200k/200k_vocab_15k/raw_200k_data
+# train_src: train_200k.spm.en
+# train_tgt: train_200k.spm.o1
+# valid_src: newstest2013-src.spm.en
+# valid_tgt: newstest2013-ref.spm.de
+# save_data: /home/yimeng/workspace/data/en_de/200k/200k_vocab_15k/raw_200k_data/seq-KD/processed
+
+# # examples: en_de dataset (37k)
+# data_dir: /home/yimeng/workspace/data/en_de/200k/raw_data_200k_37k
+# train_src: train_200k_37k.spm.en
+# train_tgt: train_200k_37k.spm.01
+# valid_src: newstest2013-src.spm.en
+# valid_tgt: newstest2013-ref.spm.de
+# save_data: /home/yimeng/workspace/data/en_de/200k/raw_data_200k_37k/processed_data/processed
